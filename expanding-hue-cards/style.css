@@ -14,10 +14,63 @@ body {
   overflow: hidden;
 }
 
-/*TODO: CONTAINER*/
+.container {
+  display: flex;
+  margin-right: 50px;
+  width: 90vw;
+}
 
-/*TODO: PANEL*/
+.panel {
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
 
-/*TODO: ACTIVE PANEL */
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+  cursor: text;
+}
 
-/*TODO: PANEL TEXT */
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(4) {
+    display: none;
+  }
+}
+
+.btn {
+  font-family: "Baloo Chettan 2", cursive;
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  border: 1px solid #b94632;
+  outline: none;
+  transition: 0.4s ease-in;
+  margin: 0 40px 0 40px;
+}
+
+.btn:hover {
+  background: #b94632;
+  color: #fff;
+}
