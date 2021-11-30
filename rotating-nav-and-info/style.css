@@ -50,6 +50,7 @@ body {
   height: 200px;
   border-radius: 50%;
   position: relative;
+  transition: transform 0.5s linear;
 }
 
 .container.nav-active .nav-circle {
@@ -68,6 +69,7 @@ body {
   top: 0;
   left: calc(100% - 200px);
   position: relative;
+  transition: transform 0.5s linear;
 }
 
 button {
@@ -127,7 +129,7 @@ div ul li i {
   transition: transform 0.5s ease-in;
 }
 
-.container.info-active + div.info-elements ul li {
+.container.info-active + div + div.info-elements ul li {
   transform: translateX(0);
   transition-delay: 0.3s;
 }
