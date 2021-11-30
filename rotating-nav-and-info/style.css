@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Baloo Chettan 2", cursive;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.container {
+  background-color: #fafafa;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.container.nav-active {
+  transform-origin: top left;
+  transform: rotate(-20deg);
+}
+
+.container.info-active {
+  transform-origin: top right;
+  transform: rotate(20deg);
+}
+
+.nav {
+  height: auto;
+  margin-top: 25%;
+  position: sticky;
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 100vw;
+  display: flex;
+}
+
+.nav-circle {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.container.nav-active .nav-circle {
+  transform: rotate(-90deg);
+}
+
+.container.info-active .info-circle {
+  transform: rotate(90deg);
+}
+
+.info-circle {
+  background-color: greenyellow;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  top: 0;
+  left: calc(100% - 200px);
+  position: relative;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: white;
+}
+
+.nav-elements {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+}
+
+.nav-elements ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+.nav-elements ul li {
+  padding: 5px;
+  color: #fafafa;
+  transform: translateX(-125%);
+  transition: transform 0.5s ease-in;
+}
+
+.container.nav-active + div.nav-elements ul li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+div ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.info-elements {
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+  max-width: 300px;
+  font-size: 13px;
+}
+
+.info-elements ul {
+  list-style-type: none;
+}
+
+.info-elements ul li {
+  padding: 5px;
+  color: #fafafa;
+  transform: translateX(125%);
+  transition: transform 0.5s ease-in;
+}
+
+.container.info-active + div.info-elements ul li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.btn-nav {
+  position: absolute;
+  left: 60%;
+}
+
+.btn-info {
+  position: absolute;
+  right: 60%;
+}
+
+.nav-close {
+  left: 50%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.info-close {
+  right: 50%;
+  transform: rotate(-90deg);
+  transform-origin: top right;
+}
+
+img {
+  max-width: 100%;
+}
+
+article {
+  max-width: 1000px;
+  margin: 50px auto;
+}
