@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@700&display=swap");
 
+:root {
+  --line-border-active: rgb(77, 101, 143);
+  --line-border-inactive: rgb(167, 167, 167);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -14,10 +19,78 @@ body {
   overflow: hidden;
 }
 
-/*TODO: CONTAINER*/
+.container {
+  text-align: center;
+}
 
-/*TODO: PROGRESS STICK*/
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 30px;
+  width: 350px;
+}
 
-/*TODO: CIRCLES*/
+.progress-container::before {
+  content: "";
+  height: 4px;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  background: var(--line-border-inactive);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -2;
+}
+.progress {
+  height: 4px;
+  width: 0%;
+  left: 0;
+  position: absolute;
+  background: var(--line-border-active);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.4s ease;
+}
 
-/*TODO: BUTTONS*/
+.circle {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--line-border-inactive);
+  align-items: center;
+  background-color: white;
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--line-border-active);
+}
+
+.button {
+  margin: 5px;
+  padding: 20px 30px;
+  background-color: var(--line-border-active);
+  border: 0;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  font-size: 14px;
+}
+
+.button.inactive {
+  cursor: not-allowed;
+  background-color: var(--line-border-inactive);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button:focus {
+  outline: 0;
+}
