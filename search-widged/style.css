@@ -18,3 +18,41 @@ body {
 
 /* TODO: Search Button Classes 
    TODO: Hidden Search Widged Classes */
+
+.container {
+  height: 50px;
+  position: relative;
+}
+
+#searchButton {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  transition: 0.3s ease;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+#input {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  font-size: 18px;
+  padding: 15px;
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+#searchButton.active {
+  transform: translateX(198px);
+  outline: none;
+}
+
+#input.active {
+  width: 200px;
+  outline: none;
+}
